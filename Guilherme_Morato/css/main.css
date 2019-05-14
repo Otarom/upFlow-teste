@@ -1,0 +1,41 @@
+	.input-round {
+	  border-radius: 25px;
+	  border: 2px solid #BBBBBB;
+	  padding: 5px; 
+	}
+
+	.result-box {
+        border-radius: 25px;
+        border: 2px solid;
+		padding: 20px;
+	}
+
+    .result {
+      border-radius: 25px;
+      border: 2px solid;
+      padding: 5px; 
+    }
+
+    .text {
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .dark-background {
+        background-color: #444444;
+    }
+
+    .white-float {
+        background-color: #FFFFFF;
+        padding: 20px;
+        box-shadow: 20px #333333;
+        border-radius: 25px;
+        border: 2px solid #BBBBBB;
+    }
+
+    .small-credit {
+        color: #BBBBBB;
+        font-size: 15px;
+    }
+
+
+	

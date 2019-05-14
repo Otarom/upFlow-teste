@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="js/controller.js"></script>
+		
+		<link rel="icon" href="ico/favicon.ico" type="image/ico" sizes="16x16">
+		
+		<title>Upflow</title>
+	</head>
+
+	<body class="dark-background" ng-app="Calculator">
+
+		<div class="col-md-12" ng-controller="ctrlCalc">
+			<div class="col-md-12" align="center"><br></div>
+
+			<div class="col-md-12" align="center">
+
+				<div class="col-md-2" align="center"></div>
+				<div class="col-md-8 white-float" align="center">
+					<div ng-if="divs.one" class="col-md-12" align="center">
+						<form name="frmCampos">
+							<div class=" col-md-6">
+								<div class="alerts">
+									<p class="alert-danger text" ng-show="frmCampos.qtd.$dirty && frmCampos.qtd.$invalid" >Por favor, insira um valor válido</p>
+									<p class="alert-Info text" ng-show="frmCampos.qtd.$pristine" >* - Obrigatório (2-100)</p>
+								</div>
+								<span class="text">Digite a quantidade de números para somar *</span><br>
+								<input class="input-round" name="qtd" ng-model="info.qtdCamp" type="number" step="1" min="2" max="100 " required><br>
+							</div>
+							<br>
+							<div class="from-control">
+								<button class="btn btn-info text" ng-click="createInputs()" ng-disabled="frmCampos.qtd.$dirty && frmCampos.qtd.$invalid || frmCampos.qtd.$pristine">Criar Campos</button>
+							</div>
+						</form>
+					</div>
+						
+					
+
+					<div ng-if="divs.two" class="col-md-12" align="center">
+						<form name="frmCalculator">
+							<p class="alert-info text" ng-show="frmCalculator.$pristine" >Por favor preencha todos os {{info.qtdCamp}} campos</p>
+							<div class="col-md-4" ng-repeat="x in arrayCampos">
+								<span class="text" ng-model="info.num[x]">Número {{x}}</span><br>
+								<input class="input-round" ng-model="info.num[x]" type="number" step="any" required><br>
+							</div>
+							<br>
+							<div class="col-md-6">
+								<button class="btn btn-success text" ng-click="submitNumber()" ng-disabled="frmCalculator.$dirty && frmCalculator.$invalid || frmCalculator.$pristine">Somar</button>
+
+								<p class="alert-danger text" ng-show="frmCalculator.$dirty && frmCalculator.$invalid" >Todas os campos devem estar preenchidos com valores válidos!</p>
+							</div>
+						</form>
+						<button class="btn btn-danger text" ng-click="back()">Voltar</button>
+					</div>
+
+					<div ng-if="divs.three" class="col-md-12" align="center">
+						<div class="alert-success col-md-8 result-box">
+							<h3 class="text">Resultado</h3>
+							<p class="text">A soma dos {{info.qtdCamp}} números inseridos é:</p>
+							<h4 class="result">{{resultado}}</h4><br>
+						</div>
+						<br>
+						<button class="btn btn-danger text" ng-click="back()">Voltar</button>
+					</div>
+				</div>
+
+				<div class="col-md-2" align="left"></div><br>
+				<p class="text small-credit">Programa criado por Guilherme Morato para o processo seletivo da UpFlow</p>
+			</div>
+		</div>
+			<div class="col-md-12" align="center"><br></div>
+		</div>
+
+	</body>
+</html>
