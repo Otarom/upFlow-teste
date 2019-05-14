@@ -1,0 +1,4 @@
+Pasta css - Arquivo main.css contendo todas as modificações css da página
+Pasta ico - Pasta de armazenamento do Favicon
+Pasta js - Arquivo controller.js contendo todo o código de processamento (feito utilizando AngularJS)
+Arquivo index.html - Página principal contendo todo o user interface
